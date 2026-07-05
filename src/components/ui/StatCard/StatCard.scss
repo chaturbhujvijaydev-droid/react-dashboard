@@ -1,0 +1,35 @@
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__icon {
+    font-size: 28px;
+    color: #2563eb;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  &__change {
+    margin-top: 12px;
+    color: #16a34a;
+    font-weight: 600;
+  }
+}
