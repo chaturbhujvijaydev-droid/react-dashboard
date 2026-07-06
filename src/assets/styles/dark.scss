@@ -1,0 +1,18 @@
+body[data-theme="dark"] {
+
+background: var(--toggle-bg);
+  --card-bg: #1e1e1e;
+  --text-color: #f8f9fa;
+  --border-color: #343a40;
+
+  --sidebar-bg: #181818;
+  --navbar-bg: #1e1e1e;
+
+  --hover-bg: #2d2d2d;
+
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+  --success: #20c997;
+  --danger: #ff6b6b;
+  --warning: #ffd43b;
+}

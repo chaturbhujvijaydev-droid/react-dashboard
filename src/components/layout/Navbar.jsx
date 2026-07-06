@@ -1,5 +1,5 @@
 import "./Navbar.css";
-
+import ThemeToggle from "../common/ThemeToggle/ThemeToggle";
 const Navbar = () => {
   return (
     <nav className="navbar-custom d-flex justify-content-between align-items-center">
@@ -29,7 +29,7 @@ const Navbar = () => {
           <span>Vijay</span>
 
         </div>
-
+<ThemeToggle />
       </div>
 
     </nav>

@@ -1,0 +1,37 @@
+.theme-switch {
+  width: 64px;
+  height: 34px;
+  background: var(--border-color);
+  border-radius: 50px;
+  padding: 3px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.switch-slider {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  color: #f4b400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.switch-slider.light {
+  transform: translateX(0);
+}
+
+.switch-slider.dark {
+  transform: translateX(30px);
+  color: #4dabf7;
+}
+
+.icon {
+  font-size: 14px;
+}
