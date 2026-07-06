@@ -1,6 +1,8 @@
 import Layout from "../../components/layout/Layout";
 import StatCard from "../../components/ui/StatCard/StatCard";
 import RevenueChart from "../../components/charts/RevenueChart";
+import RecentOrders from "../../components/tables/RecentOrders";
+
 
 import {
   FaUsers,
@@ -50,9 +52,15 @@ const Dashboard = () => {
             change="+18%"
             icon={<FaRupeeSign />}
           />
-          <div className="row mt-4">
+      
+</div>
+    <div className="row mt-4">
   <div className="col-12">
     <RevenueChart />
+  </div>
+<div className="row">
+  <div className="col-12">
+    <RecentOrders />
   </div>
 </div>
         </div>
