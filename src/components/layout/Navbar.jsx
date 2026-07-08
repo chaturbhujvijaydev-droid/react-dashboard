@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import ThemeToggle from "../common/ThemeToggle/ThemeToggle";
+import ProfileDropdown from "../common/ProfileDropdown/ProfileDropdown";
 const Navbar = () => {
   return (
     <nav className="navbar-custom d-flex justify-content-between align-items-center">
@@ -18,18 +19,10 @@ const Navbar = () => {
 
         <i className="bi bi-chat-left-text fs-5"></i>
 
-        <div className="d-flex align-items-center gap-2">
-
-          <img
-            src="https://i.pravatar.cc/40"
-            alt="Profile"
-            className="rounded-circle"
-          />
-
-          <span>Vijay</span>
-
-        </div>
-<ThemeToggle />
+      <div className="d-flex align-items-center gap-3">
+  <ThemeToggle />
+  <ProfileDropdown />
+</div>
       </div>
 
     </nav>
