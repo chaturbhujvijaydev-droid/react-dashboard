@@ -1,38 +1,166 @@
 .sidebar {
-  min-width: 250px;
-  min-height: 100vh;
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  flex: 0 0 260px;
+
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
   background: var(--card-bg);
-color: var(--text-color);
-border-right: 1px solid var(--border-color);
-color: var(--text-color);
+  color: var(--text-color);
+  border-right: 1px solid var(--border-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: all 0.3s ease;
 }
 
 .sidebar-logo {
-  font-size: 24px;
-  font-weight: bold;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid #374151;
-}
+  padding: 24px;
 
-.sidebar .nav-link {
-color: var(--text-color);
-  padding: 12px 20px;
   display: flex;
+
+  justify-content: space-between;
+
   align-items: center;
-  gap: 12px;
-  border-radius: 8px;
-  margin: 6px 10px;
-  text-decoration: none;
-  transition: 0.3s;
+
+  border-bottom: 1px solid var(--border-color);
 }
 
-.sidebar .nav-link:hover {
- background: #374151;
-  color: white;
+.sidebar-logo h4{
+  margin:0;
 }
 
-.sidebar .nav-link.active {
-  background: #2563eb;
-  color: white;
+.sidebar-logo small{
+  color:#888;
+}
+
+.close-btn{
+  display:none;
+  border:none;
+  background:none;
+  color:inherit;
+  font-size:20px;
+}
+
+.sidebar .nav-link{
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  margin:8px 14px;
+
+  padding:14px 18px;
+
+  border-radius:12px;
+
+  color:var(--text-color);
+
+  text-decoration:none;
+
+  transition:.3s;
+}
+
+.sidebar .nav-link svg{
+  transition:.3s;
+}
+
+.sidebar .nav-link:hover{
+  background:#2563eb;
+  color:white;
+}
+
+.sidebar .nav-link:hover svg{
+  transform:translateX(5px);
+}
+
+.sidebar .nav-link.active{
+  background:#2563eb;
+  color:white;
+}
+
+.sidebar-footer{
+
+  padding:22px;
+
+  border-top:1px solid var(--border-color);
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+}
+
+.sidebar-footer img{
+
+  width:45px;
+
+  height:45px;
+
+  border-radius:50%;
+}
+
+.sidebar-overlay{
+
+  display:none;
+}
+
+@media(max-width:991px){
+
+.sidebar {
+    width: 260px;
+    min-width: 260px;
+    max-width: 260px;
+    flex: none;
+}
+
+.sidebar.show{
+
+left:0;
+}
+
+.close-btn{
+
+display:block;
+}
+
+.sidebar-overlay{
+
+display:block;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+background:rgba(0,0,0,.45);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:1040;
+}
+
+.sidebar-overlay.show{
+
+opacity:1;
+
+visibility:visible;
+}
+
 }

@@ -31,7 +31,7 @@ const Dashboard = () => {
           <StatCard
             title="Products"
             value="324"
-             change="+12.8% this month"
+       change="-2 inactive products"
             icon={<FaBox />}
           />
         </div>
@@ -48,8 +48,8 @@ const Dashboard = () => {
         <div className="col-lg-3 col-md-6">
           <StatCard
             title="Revenue"
-            value="₹9,25,0"
-            change="-2.4% today"
+            value="$54,240"
+          change="+12.8% this month"
             icon={<FaRupeeSign />}
           />
       
