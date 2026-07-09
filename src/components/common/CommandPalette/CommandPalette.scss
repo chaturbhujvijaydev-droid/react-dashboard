@@ -1,0 +1,61 @@
+.cp-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+.command-palette {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 620px;
+  background: var(--card-bg);
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  overflow: hidden;
+  z-index: 1000;
+  animation: popup .18s ease;
+}
+
+.command-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 18px 22px;
+  font-size: 18px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.command-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.command-item {
+  padding: 16px 22px;
+  cursor: pointer;
+  transition: .2s;
+  color: var(--text-color);
+}
+
+.command-item:hover {
+  background: var(--hover-bg);
+}
+
+@keyframes popup{
+  from{
+    opacity:0;
+    transform:translate(-50%,-20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translate(-50%,0);
+  }
+}

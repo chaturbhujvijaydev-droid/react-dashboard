@@ -22,7 +22,7 @@ const Dashboard = () => {
           <StatCard
             title="Users"
             value="1,245"
-            change="+12%"
+        change="+8 New Users"
             icon={<FaUsers />}
           />
         </div>
@@ -31,7 +31,7 @@ const Dashboard = () => {
           <StatCard
             title="Products"
             value="324"
-            change="+5%"
+             change="+12.8% this month"
             icon={<FaBox />}
           />
         </div>
@@ -40,7 +40,7 @@ const Dashboard = () => {
           <StatCard
             title="Orders"
             value="842"
-            change="+9%"
+             change="+18 Orders"
             icon={<FaShoppingCart />}
           />
         </div>
@@ -48,8 +48,8 @@ const Dashboard = () => {
         <div className="col-lg-3 col-md-6">
           <StatCard
             title="Revenue"
-            value="₹1,25,000"
-            change="+18%"
+            value="₹9,25,0"
+            change="-2.4% today"
             icon={<FaRupeeSign />}
           />
       
