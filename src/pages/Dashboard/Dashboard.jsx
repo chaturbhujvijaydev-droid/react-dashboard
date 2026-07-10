@@ -5,7 +5,7 @@ import SalesChart from "../../components/charts/SalesChart/SalesChart";
 import UsersChart from "../../components/charts/UsersChart/UsersChart";
 import RecentOrders from "../../components/orders/RecentOrders";
 import ActivityTimeline from "../../components/activity/ActivityTimeline";
-
+import TopProducts from "../../components/products/TopProducts";
 
 import {
   FaUsers,
@@ -88,7 +88,7 @@ const Dashboard = () => {
   </div>
 
   <div className="col-lg-6 mb-4">
-    {/* Top Selling Products (Next Feature) */}
+  <TopProducts />
   </div>
 
 </div>

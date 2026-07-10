@@ -1,12 +1,19 @@
 import Layout from "../../components/layout/Layout";
+import ProductStats from "../../components/products/ProductStats";
+import ProductTable from "../../components/products/ProductTable";
 
-function Products() {
-  return( 
+const Products = () => {
+  return (
     <Layout>
-  <h1>Products</h1>
-  <h2 className="text-center"> COMMING SOON</h2>
-  </Layout>
+
+      <h2 className="mb-4">Products</h2>
+
+      <ProductStats />
+
+      <ProductTable />
+
+    </Layout>
   );
-}
+};
 
 export default Products;

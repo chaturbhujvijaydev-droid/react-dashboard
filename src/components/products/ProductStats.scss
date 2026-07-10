@@ -1,0 +1,35 @@
+.product-stat-card{
+    background: var(--card-bg);
+    border-radius:16px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.product-stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.product-stat-card .icon{
+    width:55px;
+    height:55px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:22px;
+}
+
+.product-stat-card h3{
+    margin:0;
+    font-weight:700;
+}
+
+.product-stat-card p{
+    margin:4px 0 0;
+    color:#888;
+}
