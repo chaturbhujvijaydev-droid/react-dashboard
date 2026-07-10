@@ -3,7 +3,8 @@ import StatCard from "../../components/ui/StatCard/StatCard";
 import RevenueChart from "../../components/charts/RevenueChart/RevenueChart";
 import SalesChart from "../../components/charts/SalesChart/SalesChart";
 import UsersChart from "../../components/charts/UsersChart/UsersChart";
-import RecentOrders from "../../components/tables/RecentOrders";
+import RecentOrders from "../../components/orders/RecentOrders";
+import ActivityTimeline from "../../components/activity/ActivityTimeline";
 
 
 import {
@@ -80,6 +81,17 @@ const Dashboard = () => {
         </div>
 
       </div>
+      <div className="row mt-4">
+
+  <div className="col-lg-6 mb-4">
+    <ActivityTimeline />
+  </div>
+
+  <div className="col-lg-6 mb-4">
+    {/* Top Selling Products (Next Feature) */}
+  </div>
+
+</div>
     </Layout>
   );
 };
