@@ -40,7 +40,7 @@ const Sidebar = ({
     <div className="logo-content">
       
       <h4> 🚀 React Dashboard</h4>
-      <small>Admin Panel</small>
+      <small className="ml-4"> Admin Panel</small>
     </div>
   )}
 

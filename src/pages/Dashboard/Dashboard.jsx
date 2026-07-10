@@ -1,6 +1,8 @@
 import Layout from "../../components/layout/Layout";
 import StatCard from "../../components/ui/StatCard/StatCard";
-import RevenueChart from "../../components/charts/RevenueChart";
+import RevenueChart from "../../components/charts/RevenueChart/RevenueChart";
+import SalesChart from "../../components/charts/SalesChart/SalesChart";
+import UsersChart from "../../components/charts/UsersChart/UsersChart";
 import RecentOrders from "../../components/tables/RecentOrders";
 
 
@@ -57,6 +59,18 @@ const Dashboard = () => {
     <div className="row mt-4">
   <div className="col-12">
     <RevenueChart />
+
+    <div className="row mt-4">
+
+  <div className="col-lg-7">
+    <SalesChart />
+  </div>
+
+  <div className="col-lg-5">
+       <UsersChart />
+  </div>
+
+</div>
   </div>
 <div className="row">
   <div className="col-12">
