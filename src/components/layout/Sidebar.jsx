@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-
 import {
   FaHome,
   FaUsers,
@@ -14,41 +13,47 @@ import "./Sidebar.css";
 const Sidebar = ({
   sidebarOpen,
   setSidebarOpen,
+  collapsed,
 }) => {
   return (
     <>
+      {/* Mobile Overlay */}
       <div
-        className={`sidebar-overlay ${
-          sidebarOpen ? "show" : ""
-        }`}
+        className={`sidebar-overlay ${sidebarOpen ? "show" : ""}`}
         onClick={() => setSidebarOpen(false)}
       />
 
+      {/* Sidebar */}
       <div
         className={`sidebar ${
-          sidebarOpen ? "show" : ""
-        }`}
+          !collapsed ? "expanded" : ""
+        } ${sidebarOpen ? "show" : ""}`}
       >
-
+        {/* Logo */}
         <div className="sidebar-logo">
 
-          <div>
+  {collapsed ? (
+    <div className="sidebar-brand">
+      🚀
+    </div>
+  ) : (
+    <div className="logo-content">
+      
+      <h4> 🚀 React Dashboard</h4>
+      <small>Admin Panel</small>
+    </div>
+  )}
 
-            <h4>🚀 React Dashboard</h4>
+  <button
+    className="close-btn"
+    onClick={() => setSidebarOpen(false)}
+  >
+    <FaTimes />
+  </button>
 
-            <small>Admin Panel</small>
+</div>
 
-          </div>
-
-          <button
-            className="close-btn"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <FaTimes />
-          </button>
-
-        </div>
-
+        {/* Navigation */}
         <nav className="mt-4">
 
           <NavLink
@@ -57,7 +62,7 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaHome />
-            Dashboard
+            {!collapsed && <span>Dashboard</span>}
           </NavLink>
 
           <NavLink
@@ -66,7 +71,7 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaUsers />
-            Users
+            {!collapsed && <span>Users</span>}
           </NavLink>
 
           <NavLink
@@ -75,7 +80,7 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaBox />
-            Products
+            {!collapsed && <span>Products</span>}
           </NavLink>
 
           <NavLink
@@ -84,7 +89,7 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaShoppingCart />
-            Orders
+            {!collapsed && <span>Orders</span>}
           </NavLink>
 
           <NavLink
@@ -93,28 +98,25 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaCog />
-            Settings
+            {!collapsed && <span>Settings</span>}
           </NavLink>
 
         </nav>
 
+        {/* Footer */}
         <div className="sidebar-footer">
-
           <img
             src="https://i.pravatar.cc/100"
             alt="profile"
           />
 
-          <div>
-
-            <h6>Vijay</h6>
-
-            <small>Frontend Developer</small>
-
-          </div>
-
+          {!collapsed && (
+            <div className="sidebar-user-info">
+              <h6>Vijay</h6>
+              <small>Frontend Developer</small>
+            </div>
+          )}
         </div>
-
       </div>
     </>
   );
