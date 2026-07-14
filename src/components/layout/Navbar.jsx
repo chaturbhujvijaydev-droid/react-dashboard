@@ -35,19 +35,20 @@ const Navbar = ({
 
       </div>
 
-      <div className="d-flex align-items-center gap-3">
+      <div className="d-flex align-items-center gap-3 navbar-actions">
+        <div className="navbar-search-wrapper">
+          <i className="bi bi-search search-icon"></i>
+          <input
+            className="form-control navbar-search"
+            placeholder="Search..."
+          />
+        </div>
 
-        <input
-          className="form-control navbar-search"
-          placeholder="Search..."
-        />
-
-        <i className="bi bi-bell fs-5"></i>
+        <i className="bi bi-bell fs-5 navbar-icon"></i>
 
         <ThemeToggle />
 
         <ProfileDropdown />
-
       </div>
 
     </nav>
