@@ -15,43 +15,46 @@ const Sidebar = ({
   setSidebarOpen,
   collapsed,
 }) => {
+  // On mobile always show expanded sidebar
+  const isMobile = window.innerWidth <= 991;
+
+  const isExpanded = isMobile || !collapsed;
+
   return (
     <>
-      {/* Mobile Overlay */}
+      {/* Overlay */}
       <div
         className={`sidebar-overlay ${sidebarOpen ? "show" : ""}`}
         onClick={() => setSidebarOpen(false)}
       />
 
       {/* Sidebar */}
-      <div
+      <aside
         className={`sidebar ${
-          !collapsed ? "expanded" : ""
+          isExpanded ? "expanded" : ""
         } ${sidebarOpen ? "show" : ""}`}
       >
         {/* Logo */}
         <div className="sidebar-logo">
+          {isExpanded ? (
+            <div className="logo-content">
+              <h4>🚀 React Dashboard</h4>
+              <small>Admin Panel</small>
+            </div>
+          ) : (
+            <div className="sidebar-brand">
+              🚀
+            </div>
+          )}
 
-  {collapsed ? (
-    <div className="sidebar-brand">
-      🚀
-    </div>
-  ) : (
-    <div className="logo-content">
-      
-      <h4> 🚀 React Dashboard</h4>
-      <small className="ml-4"> Admin Panel</small>
-    </div>
-  )}
-
-  <button
-    className="close-btn"
-    onClick={() => setSidebarOpen(false)}
-  >
-    <FaTimes />
-  </button>
-
-</div>
+          {/* Mobile Close Button */}
+          <button
+            className="close-btn"
+            onClick={() => setSidebarOpen(false)}
+          >
+            <FaTimes />
+          </button>
+        </div>
 
         {/* Navigation */}
         <nav className="mt-4">
@@ -62,7 +65,7 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaHome />
-            {!collapsed && <span>Dashboard</span>}
+            {isExpanded && <span>Dashboard</span>}
           </NavLink>
 
           <NavLink
@@ -71,7 +74,7 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaUsers />
-            {!collapsed && <span>Users</span>}
+            {isExpanded && <span>Users</span>}
           </NavLink>
 
           <NavLink
@@ -80,7 +83,7 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaBox />
-            {!collapsed && <span>Products</span>}
+            {isExpanded && <span>Products</span>}
           </NavLink>
 
           <NavLink
@@ -89,7 +92,7 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaShoppingCart />
-            {!collapsed && <span>Orders</span>}
+            {isExpanded && <span>Orders</span>}
           </NavLink>
 
           <NavLink
@@ -98,7 +101,7 @@ const Sidebar = ({
             onClick={() => setSidebarOpen(false)}
           >
             <FaCog />
-            {!collapsed && <span>Settings</span>}
+            {isExpanded && <span>Settings</span>}
           </NavLink>
 
         </nav>
@@ -110,14 +113,14 @@ const Sidebar = ({
             alt="profile"
           />
 
-          {!collapsed && (
+          {isExpanded && (
             <div className="sidebar-user-info">
               <h6>Vijay</h6>
               <small>Frontend Developer</small>
             </div>
           )}
         </div>
-      </div>
+      </aside>
     </>
   );
 };
