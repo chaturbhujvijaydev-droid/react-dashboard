@@ -1,5 +1,5 @@
 import Layout from "../../components/layout/Layout";
-import orderStats from "../../components/Orders/OrderStats";
+import OrderStats from "../../components/Orders/OrderStats";
 import OrderTable from "../../components/Orders/OrderTable";
 
 const Orders = () => {
