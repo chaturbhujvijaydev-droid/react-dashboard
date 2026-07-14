@@ -3,28 +3,15 @@ import ThemeToggle from "../common/ThemeToggle/ThemeToggle";
 import ProfileDropdown from "../common/ProfileDropdown/ProfileDropdown";
 import { FaBars } from "react-icons/fa";
 
-const Navbar = ({
-  setSidebarOpen,
-  collapsed,
-  setCollapsed,
-}) => {
-
-  const handleSidebarToggle = () => {
-    if (window.innerWidth <= 991) {
-      setSidebarOpen(true);
-    } else {
-      setCollapsed(!collapsed);
-    }
-  };
-
+const Navbar = ({ setSidebarOpen }) => {
   return (
     <nav className="navbar-custom d-flex justify-content-between align-items-center">
 
       <div className="d-flex align-items-center gap-3">
 
         <button
-          className="navbar-menu-btn"
-          onClick={handleSidebarToggle}
+          className="menu-btn"
+          onClick={() => setSidebarOpen(true)}
         >
           <FaBars />
         </button>
@@ -35,20 +22,19 @@ const Navbar = ({
 
       </div>
 
-      <div className="d-flex align-items-center gap-3 navbar-actions">
-        <div className="navbar-search-wrapper">
-          <i className="bi bi-search search-icon"></i>
-          <input
-            className="form-control navbar-search"
-            placeholder="Search..."
-          />
-        </div>
+      <div className="d-flex align-items-center gap-3">
 
-        <i className="bi bi-bell fs-5 navbar-icon"></i>
+        <input
+          className="form-control navbar-search"
+          placeholder="Search..."
+        />
+
+        <i className="bi bi-bell fs-5"></i>
 
         <ThemeToggle />
 
         <ProfileDropdown />
+
       </div>
 
     </nav>
