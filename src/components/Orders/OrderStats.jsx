@@ -1,29 +1,20 @@
-import orders from "../../data/orders";
 import {
   FaShoppingCart,
-  FaRupeeSign,
-  FaTruck,
   FaCheckCircle,
+  FaClock,
+  FaTruck,
+  FaTimesCircle,
 } from "react-icons/fa";
 
 import "./OrderStats.scss";
 
-const OrderStats = () => {
-  const totalOrders = orders.length;
-
-  const totalRevenue = orders.reduce(
-    (sum, order) => sum + order.amount,
-    0
-  );
-
-  const pendingOrders = orders.filter(
-    (order) => order.status === "Pending"
-  ).length;
-
-  const deliveredOrders = orders.filter(
-    (order) => order.status === "Delivered"
-  ).length;
-
+const OrderStats = ({
+  totalOrders,
+  delivered,
+  pending,
+  processing,
+  cancelled,
+}) => {
   const stats = [
     {
       title: "Total Orders",
@@ -32,41 +23,47 @@ const OrderStats = () => {
       color: "primary",
     },
     {
-      title: "Revenue",
-      value: `₹ ${totalRevenue.toLocaleString()}`,
-      icon: <FaRupeeSign />,
+      title: "Delivered",
+      value: delivered,
+      icon: <FaCheckCircle />,
       color: "success",
     },
     {
-      title: "Pending",
-      value: pendingOrders,
+      title: "Processing",
+      value: processing,
       icon: <FaTruck />,
+      color: "info",
+    },
+    {
+      title: "Pending",
+      value: pending,
+      icon: <FaClock />,
       color: "warning",
     },
     {
-      title: "Delivered",
-      value: deliveredOrders,
-      icon: <FaCheckCircle />,
-      color: "info",
+      title: "Cancelled",
+      value: cancelled,
+      icon: <FaTimesCircle />,
+      color: "danger",
     },
   ];
 
   return (
     <div className="row g-4 mb-4">
       {stats.map((item, index) => (
-        <div className="col-xl-3 col-md-6" key={index}>
+        <div
+          className="col-xl col-lg-4 col-md-6 col-sm-6"
+          key={index}
+        >
           <div className="order-stat-card">
-
             <div className={`stat-icon ${item.color}`}>
               {item.icon}
             </div>
 
-            <div>
+            <div className="stat-content">
               <small>{item.title}</small>
-
               <h3>{item.value}</h3>
             </div>
-
           </div>
         </div>
       ))}

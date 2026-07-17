@@ -18,7 +18,7 @@ const orders = [
     amount: 129999,
     quantity: 1,
     payment: "Paid",
-    status: "Shipped",
+   status: "Delivered",
     date: "14 Jul 2026",
   },
   {
@@ -73,7 +73,7 @@ const orders = [
     amount: 24999,
     quantity: 2,
     payment: "Paid",
-    status: "Shipped",
+      status: "Delivered",
     date: "09 Jul 2026",
   },
   {
@@ -117,7 +117,7 @@ const orders = [
     amount: 52999,
     quantity: 1,
     payment: "Paid",
-    status: "Shipped",
+      status: "Delivered",
     date: "05 Jul 2026",
   },
   {
@@ -160,8 +160,8 @@ const orders = [
     product: "ASUS ROG Monitor",
     amount: 38999,
     quantity: 1,
-    payment: "Paid",
-    status: "Shipped",
+    payment: "Refunded",
+    status: "Cancelled",
     date: "01 Jul 2026",
   },
   {
