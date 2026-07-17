@@ -1,24 +1,429 @@
-.modal-content{
-    border-radius:16px;
+/* ==========================
+   Login Page
+========================== */
+
+.login-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
 }
 
-.modal-header{
-    border-bottom:1px solid var(--border-color);
+/* ==========================
+   Card
+========================== */
+
+.login-card {
+  width: 1100px;
+  min-height: 650px;
+
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 430px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
 }
 
-.modal-body{
-    background:var(--card-bg);
+/* ==========================
+   Left Side
+========================== */
+
+.login-left {
+  padding: 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 100%
+  );
 }
 
-.form-control,
-.form-select{
-    background:var(--card-bg);
-    color:var(--text-color);
-    border:1px solid var(--border-color);
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 70px;
 }
 
-.form-control:focus,
-.form-select:focus{
-    box-shadow:none;
-    border-color:var(--primary-color);
+.logo-icon {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  color: white;
+
+  font-size: 34px;
+
+  box-shadow: 0 10px 25px rgba(37, 99, 235, .25);
+}
+
+.logo h2 {
+  margin: 0;
+
+  font-size: 36px;
+
+  color: #111827;
+
+  font-weight: 700;
+}
+
+.logo span {
+  color: #64748b;
+}
+
+.login-left h1 {
+  font-size: 52px;
+
+  color: #111827;
+
+  margin-bottom: 20px;
+
+  font-weight: 700;
+}
+
+.login-left p {
+  color: #64748b;
+
+  line-height: 1.8;
+
+  max-width: 500px;
+
+  margin-bottom: 50px;
+}
+
+/* ==========================
+   Feature Cards
+========================== */
+
+.login-preview {
+  display: grid;
+
+  gap: 18px;
+}
+
+.preview-card {
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  padding: 22px;
+
+  transition: .3s;
+
+  box-shadow: 0 10px 25px rgba(15, 23, 42, .05);
+}
+
+.preview-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 18px 35px rgba(15, 23, 42, .10);
+}
+
+.preview-card h5 {
+  color: #64748b;
+
+  margin-bottom: 10px;
+}
+
+.preview-card h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-weight: 700;
+}
+
+/* ==========================
+   Right Side
+========================== */
+
+.login-right {
+  padding: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: white;
+}
+
+.login-right form {
+  width: 100%;
+}
+
+.login-right h3 {
+  font-size: 36px;
+
+  margin-bottom: 10px;
+
+  color: #111827;
+}
+
+.login-right p {
+  color: #64748b;
+
+  margin-bottom: 35px;
+}
+
+/* ==========================
+   Inputs
+========================== */
+
+.input-group-custom {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  padding: 14px 18px;
+
+  margin-bottom: 18px;
+
+  transition: .3s;
+}
+
+.input-group-custom:hover {
+  border-color: #2563eb;
+}
+
+.input-group-custom:focus-within {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, .10);
+}
+
+.input-group-custom svg {
+  color: #64748b;
+
+  font-size: 17px;
+}
+
+.input-group-custom input {
+  flex: 1;
+
+  border: none;
+
+  background: transparent;
+
+  outline: none;
+
+  color: #111827;
+}
+
+.input-group-custom input::placeholder {
+  color: #94a3b8;
+}
+
+.input-group-custom button {
+  border: none;
+
+  background: transparent;
+
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+/* ==========================
+   Options
+========================== */
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 30px;
+
+  font-size: 14px;
+}
+
+.login-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #64748b;
+}
+
+.login-options a {
+  text-decoration: none;
+
+  color: #2563eb;
+
+  font-weight: 500;
+}
+
+.login-options a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   Button
+========================== */
+
+.login-btn {
+  width: 100%;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+.login-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 30px rgba(37,99,235,.25);
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.login-footer {
+  margin-top: 40px;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+/* ==========================
+   Dark Mode
+========================== */
+
+.dark .login-page {
+  background: #0f172a;
+}
+
+.dark .login-card {
+  background: #111827;
+
+  border-color: #374151;
+}
+
+.dark .login-left {
+  background: #111827;
+}
+
+.dark .login-right {
+  background: #1f2937;
+}
+
+.dark .logo h2,
+.dark .login-left h1,
+.dark .login-right h3 {
+  color: #f8fafc;
+}
+
+.dark .logo span,
+.dark .login-left p,
+.dark .login-right p,
+.dark .login-options label {
+  color: #94a3b8;
+}
+
+.dark .preview-card {
+  background: #1f2937;
+
+  border-color: #374151;
+
+  box-shadow: none;
+}
+
+.dark .preview-card h2 {
+  color: white;
+}
+
+.dark .preview-card h5 {
+  color: #94a3b8;
+}
+
+.dark .input-group-custom {
+  background: #111827;
+
+  border-color: #374151;
+}
+
+.dark .input-group-custom input {
+  color: white;
+}
+
+.dark .input-group-custom svg,
+.dark .input-group-custom button {
+  color: #94a3b8;
+}
+
+.dark .login-footer {
+  color: #94a3b8;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media (max-width: 992px) {
+
+  .login-card {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .login-left {
+    display: none;
+  }
+
+  .login-right {
+    padding: 40px 30px;
+  }
 }
