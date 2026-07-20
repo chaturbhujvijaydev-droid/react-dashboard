@@ -7,6 +7,7 @@ import Users from "./pages/Users/Users";
 import Products from "./pages/Products/Products";
 import Orders from "./pages/Orders/Orders";
 import Settings from "./pages/Settings/Settings";
+import Profile from "./pages/Profile/Profile";
 import NotFound from "./pages/NotFound/NotFound";
 
 import ProtectedRoute from "./components/common/ProtectedRoute";
@@ -17,11 +18,13 @@ function App() {
 
   useEffect(() => {
     const handler = (e) => {
+      // Ctrl + K / Cmd + K
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         setPaletteOpen(true);
       }
 
+      // Escape
       if (e.key === "Escape") {
         setPaletteOpen(false);
       }
@@ -29,22 +32,35 @@ function App() {
 
     window.addEventListener("keydown", handler);
 
-    return () => window.removeEventListener("keydown", handler);
+    return () => {
+      window.removeEventListener("keydown", handler);
+    };
   }, []);
 
   return (
     <BrowserRouter>
+
       <Routes>
 
         {/* Public Route */}
         <Route path="/" element={<Login />} />
 
         {/* Protected Routes */}
+
         <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
             </ProtectedRoute>
           }
         />
@@ -85,13 +101,18 @@ function App() {
           }
         />
 
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
+
       </Routes>
 
       <CommandPalette
         isOpen={isPaletteOpen}
         onClose={() => setPaletteOpen(false)}
       />
+
     </BrowserRouter>
   );
 }

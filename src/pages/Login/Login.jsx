@@ -145,7 +145,7 @@ const Login = () => {
           </button>
 
           {/* Demo Credentials */}
-          <div className="demo-login">
+          <div className="demo-login pt-5">
             <h6>Demo Credentials</h6>
 
             <p>

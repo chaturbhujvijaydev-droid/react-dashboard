@@ -20,10 +20,10 @@ const ProfileDropdown = () => {
 
   const dropdownRef = useRef(null);
 
-  // Get logged in user
   const user =
     JSON.parse(localStorage.getItem("user")) || {
-      name: "Admin",
+      name: "Admin User",
+      email: "admin@reactadmin.com",
     };
 
   useEffect(() => {
@@ -36,10 +36,7 @@ const ProfileDropdown = () => {
       }
     };
 
-    document.addEventListener(
-      "mousedown",
-      handleClickOutside
-    );
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () =>
       document.removeEventListener(
@@ -57,15 +54,13 @@ const ProfileDropdown = () => {
     navigate("/");
   };
 
-  const goToSettings = () => {
+  const goToProfile = () => {
     setOpen(false);
-
-    navigate("/settings");
+    navigate("/profile");
   };
 
-  const goToDashboard = () => {
+  const goToSettings = () => {
     setOpen(false);
-
     navigate("/settings");
   };
 
@@ -78,15 +73,25 @@ const ProfileDropdown = () => {
         className="profile-btn"
         onClick={() => setOpen(!open)}
       >
-        <FaUserCircle size={28} />
-
+        <FaUserCircle size={30} />
         <span>{user.name}</span>
       </button>
 
       {open && (
         <div className="dropdown-menu-custom">
 
-          <button onClick={goToDashboard}>
+          {/* Profile Header */}
+          <div className="dropdown-profile-header">
+            <FaUserCircle className="profile-avatar" />
+
+            <h6>{user.name}</h6>
+
+            <small>{user.email}</small>
+          </div>
+
+          <hr />
+
+          <button onClick={goToProfile}>
             <FaUser />
             My Profile
           </button>
