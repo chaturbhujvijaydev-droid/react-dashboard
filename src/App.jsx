@@ -7,7 +7,7 @@ import Users from "./pages/Users/Users";
 import Products from "./pages/Products/Products";
 import Orders from "./pages/Orders/Orders";
 import Settings from "./pages/Settings/Settings";
-import Profile from "./pages/Profile/Profile";
+import Profile from "./pages/profile/profile";
 import NotFound from "./pages/NotFound/NotFound";
 
 import ProtectedRoute from "./components/common/ProtectedRoute";
